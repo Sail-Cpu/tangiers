@@ -1,0 +1,87 @@
+.sign-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .sign-page-logo{
+        position: absolute;
+        left: 30px;
+        top: 30px;
+        width: 65px;
+    }
+    .sign-up-container{
+        display: flex;
+        width: 68%;
+        height: 80%;
+        background-color: #4B5783;
+        .sign-up-left{
+            padding: 15px;
+            box-sizing: border-box;
+            width: 37%;
+            height: 100%;
+            .sign-up-left-top{
+                display: flex;
+                width: 100%;
+                height: 8%;
+                .sign-up-top-logo{
+                    height: 100%;
+                }
+            }
+            form{
+                padding-top: 15px;
+                box-sizing: border-box;
+                width: 100%;
+                height: 92%;
+                h1{
+                    font-weight: 900;
+                    margin: 0;
+                    font-size: 40px;
+                }
+                .sign-input-container{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .sign-input{
+                    padding: 10px 20px 0px 10px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    span{
+                        margin-bottom: 5px;
+                        font-size: 20px;
+                    }
+                    input{
+                        background: none;
+                        border: 4px solid #fff;
+                        border-radius: 5px;
+                        width: 100%;
+                        height: 37px;
+                        color: #fff;
+                        font-size: 20px;
+                        outline: none;
+                    }
+                   
+                } 
+                button{
+                    border: none;
+                    border-radius: 10px;
+                    background-color: #182335;
+                    margin-top: 20px;
+                    font-size: 30px;
+                    padding: 10px 50px;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+        .sign-up-right{
+            width: 63%;
+            height: 100%;
+        }
+    }
+}
