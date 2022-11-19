@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 /* Context */
 import { UserContext } from "../../context/UserContext";
@@ -13,6 +13,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const SignUp = () => {
 
     const {setToken} = useContext(UserContext);
+    const navigate = useNavigate();
 
     const[email, setEmail] = useState();
     const[pseudo, setPseudo] = useState();
@@ -40,6 +41,7 @@ const SignUp = () => {
                     setErrorMessage(result.data.error);
                 }else{
                     setToken(result.data);
+                    navigate('/home');
                 }
             }).catch((error) => {
                 console.log(error);

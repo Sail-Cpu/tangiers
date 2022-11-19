@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 /* Context */
 import { UserContext } from "../../context/UserContext";
@@ -13,6 +13,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const SignUp = () => {
 
     const {setToken} = useContext(UserContext);
+    const navigate = useNavigate();
 
     const[userName, setUserName] = useState();
     const[password, setPassword] = useState();
@@ -36,6 +37,7 @@ const SignUp = () => {
                     setErrorMessage(result.data.error);
                 }else{
                     setToken(result.data);
+                    navigate('/home');
                 }
             }).catch((error) => {
                 console.log(error);
