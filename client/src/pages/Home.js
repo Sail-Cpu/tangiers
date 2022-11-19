@@ -4,7 +4,7 @@ const Home = () => {
     return(
         <div className='page home-container'>
             tout fonctionne
-        </div>
+        </div> 
     )
 }
 

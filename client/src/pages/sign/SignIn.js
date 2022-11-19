@@ -6,7 +6,7 @@ import { UserContext } from "../../context/UserContext";
 /* img */
 import Logo from '../../assets/img/logo.png';
 import LogoTangiers from '../../assets/img/logo-tangiers.png';
-import SignUpImg from '../../assets/img/sign-up-img.png';
+import SignInImg from '../../assets/img/sign-in-img.png';
 /* Icons */
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -37,7 +37,7 @@ const SignUp = () => {
                     setErrorMessage(result.data.error);
                 }else{
                     setToken(result.data);
-                    navigate('/home');
+                    navigate('/');
                 }
             }).catch((error) => {
                 console.log(error);
@@ -78,7 +78,7 @@ const SignUp = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="sign-right" style={{backgroundImage: `url(${SignUpImg})`, backgroundSize: 'cover'}}></div>
+                <div className="sign-right" style={{backgroundImage: `url(${SignInImg})`, backgroundSize: 'cover'}}></div>
                 <div></div>
             </div>
         </div>

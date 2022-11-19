@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 export function UserContextProvider(props) {
 
-    function setToken(userToken) {
+    function setToken(userToken) { 
         sessionStorage.setItem('token', JSON.stringify(userToken));
       }
       
@@ -17,7 +17,7 @@ export function UserContextProvider(props) {
       const [user, setUser] = useState(getToken());
 
     return(
-        <UserContext.Provider value={{setToken, user}}>
+        <UserContext.Provider value={{setToken, user, getToken}}>
             {props.children}
         </UserContext.Provider>
     )

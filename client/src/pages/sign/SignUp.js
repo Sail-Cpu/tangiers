@@ -41,7 +41,7 @@ const SignUp = () => {
                     setErrorMessage(result.data.error);
                 }else{
                     setToken(result.data);
-                    navigate('/home');
+                    navigate('/');
                 }
             }).catch((error) => {
                 console.log(error);

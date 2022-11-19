@@ -1,13 +1,15 @@
 import React,{ useContext } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, Navigate } from 'react-router';
 /* Context */
 import { UserContext } from './context/UserContext';
 /* pages */
 import SignIn from './pages/sign/SignIn';
 
 const useAuth = () => {
-    const{ user } = useContext(UserContext);
-    return user && user.loggedIn;
+    const{ getToken } = useContext(UserContext);
+    console.log(getToken().loggedIn)
+    console.log("no")
+    return getToken() && getToken().loggedIn;
 }
 
 const ProtecedRoute = () => {
