@@ -15,7 +15,7 @@ router.post("/signup", async (req, res) => {
                     let insertUser = await pool.query(`insert into users (email, pseudo, password) values ($1, $2, $3) returning *`, [email, pseudo, hashPass],
                     (err, result) => {
                         if(result){
-                            res.send({loggedIn: true, user: result.rows});
+                            res.send({loggedIn: true, data: result.rows});
                         }else console.log(err);
                     })
                 }else{
@@ -51,7 +51,7 @@ router.post("/login", async (req, res) => {
                 bcrypt.compare(password, result.rows[0].password, (err, isMatch) => {
                     if(err) throw err;
                     if(isMatch){
-                        res.send({loggedIn: true, user: result.rows[0]});
+                        res.send({loggedIn: true, data: result.rows[0]});
                     }else{
                         res.send({loggedIn: false, error: "Mot de passe incorecte"});
                     }
