@@ -1,6 +1,6 @@
 .sign-page{
     width: 100%;
-    height: 710px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,10 @@
     }
     .sign-container{
         display: flex;
-        width: 68%;
-        min-width: 750px;
+        width: 75%;
+        min-width: 200px;
         max-width: 970px;
-        height: 80%;
+        height: 550px;
         background-color: #4B5783;
         .sign-left{
             padding: 15px;
@@ -51,7 +51,7 @@
                     justify-content: space-between;
                 }
                 .sign-input{
-                    padding: 10px 20px 0px 10px;
+                    padding: 10px 10px 0px 10px;
                     box-sizing: border-box;
                     width: 100%;
                     height: 100%;
@@ -79,8 +79,8 @@
                     margin-top: 10px;
                     border-radius: 10px;
                     background-color: #182335;
-                    font-size: 30px;
-                    padding: 10px 50px;
+                    font-size: 20px;
+                    padding: 13px 35px;
                     color: #fff;
                     cursor: pointer;
                 }
@@ -123,4 +123,30 @@
             height: 100%;
         }
     }
+}
+
+@media screen and (max-width: 700px) {
+    .sign-page{
+        .sign-container{
+            .sign-left{
+                width: 50%;
+            }
+            .sign-right{
+                width: 50%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .sign-page{
+        .sign-container{
+            .sign-left{
+                width: 100%;
+            }
+            .sign-right{
+                display: none;
+            }
+        }
+    }
+    
 }
