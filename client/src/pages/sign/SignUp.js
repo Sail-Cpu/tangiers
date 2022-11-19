@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from 'react-router-dom'
 import axios from 'axios';
+/* Context */
+import { UserContext } from "../../context/UserContext";
 /* img */
 import Logo from '../../assets/img/logo.png';
 import LogoTangiers from '../../assets/img/logo-tangiers.png';
 import SignUpImg from '../../assets/img/sign-up-img.png';
+/* Icons */
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const SignUp = () => {
+
+    const {setToken} = useContext(UserContext);
 
     const[email, setEmail] = useState();
     const[pseudo, setPseudo] = useState();
@@ -31,6 +38,8 @@ const SignUp = () => {
                 console.log(result.data);
                 if(!result.data.loggedIn){
                     setErrorMessage(result.data.error);
+                }else{
+                    setToken(result.data);
                 }
             }).catch((error) => {
                 console.log(error);
@@ -44,10 +53,10 @@ const SignUp = () => {
     return(
         <div className="sign-page">
             <img className="sign-page-logo" src={Logo} />
-            <div className="sign-up-container">
-                <div className="sign-up-left">
-                    <div className="sign-up-left-top">
-                        <img className="sign-up-top-logo" src={LogoTangiers} />
+            <div className="sign-container">
+                <div className="sign-left">
+                    <div className="sign-left-top">
+                        <img className="sign-top-logo" src={LogoTangiers} />
                     </div>
                     <form onSubmit={(e) => formSubmit(e)}>
                         <h1>Sign up</h1>
@@ -69,11 +78,17 @@ const SignUp = () => {
                                 <input type="password" value={password2} onChange={(e) => setPassword2(e.target.value)}></input>
                             </div>
                             <span>{errorMessage}</span>
-                            <button type="submit">Submit</button>
+                            <button type="submit">Sign up</button>
                         </div>
-                    </form> 
+                    </form>
+                    <div className="sign-left-bottom signup" style={{display: "flex", justifyContent: 'flex-end'}}>
+                        <Link to={"/signin"}>
+                            <span>Sign in</span>
+                            <ArrowForwardIcon />
+                        </Link>
+                    </div>
                 </div>
-                <div className="sign-up-right" style={{backgroundImage: `url(${SignUpImg})`, backgroundSize: 'cover'}}></div>
+                <div className="sign-right" style={{backgroundImage: `url(${SignUpImg})`, backgroundSize: 'cover'}}></div>
                 <div></div>
             </div>
         </div>
