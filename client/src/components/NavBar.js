@@ -3,6 +3,8 @@ import React,{ useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 /* Img */
 import Logo from '../assets/img/logo.png';
+/* Icons */
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
 
@@ -17,6 +19,9 @@ const NavBar = () => {
                 <span>{user.money}€</span>
                 <div className='user-logo'>S</div>
                 <button>Déconnexion</button>
+            </div>
+            <div className='toogle-sub-nav'>
+                <MenuIcon />
             </div>
         </div>
     )

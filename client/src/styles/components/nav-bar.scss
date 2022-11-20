@@ -1,4 +1,5 @@
 .nav-bar-container{
+    position: absolute;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -39,6 +40,27 @@
             padding: 10px 25px;
             border: none;
             cursor: pointer;
+        }
+    }
+    .toogle-sub-nav{
+        display: none;
+        align-items: center;
+        height: 100%;
+        svg{
+           font-size: 50px; 
+           cursor: pointer;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .nav-bar-container{
+        .nav-bar-right{
+            display: none;
+        }
+        .toogle-sub-nav{
+            display: flex;
         }
     }
 }
