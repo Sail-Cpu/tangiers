@@ -1,9 +1,11 @@
 import React from 'react';
+/* Components */
+import NavBar from '../components/NavBar';
 
 const Home = () => {
     return(
         <div className='page home-container'>
-            tout fonctionne
+            <NavBar />
         </div> 
     )
 }

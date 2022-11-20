@@ -14,7 +14,7 @@ export function UserContextProvider(props) {
         return userToken;
       }
 
-      const [user, setUser] = useState(getToken());
+      const [user, setUser] = useState(getToken().data);
 
     return(
         <UserContext.Provider value={{setToken, user, getToken}}>
