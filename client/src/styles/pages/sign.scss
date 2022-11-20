@@ -15,7 +15,7 @@
         width: 75%;
         min-width: 200px;
         max-width: 970px;
-        height: 550px;
+        height: 580px;
         background-color: #4B5783;
         .sign-left{
             padding: 15px;
@@ -60,6 +60,11 @@
                     span{
                         margin-bottom: 5px;
                         font-size: 20px;
+                    }
+                    @media screen and (max-width: 290px) {
+                        span{
+                            font-size: 15px;
+                        }
                     }
                     input{
                         background: none;
