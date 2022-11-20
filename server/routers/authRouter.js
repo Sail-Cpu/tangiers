@@ -15,7 +15,7 @@ router.post("/signup", async (req, res) => {
                     let insertUser = await pool.query(`insert into users (email, pseudo, password) values ($1, $2, $3) returning *`, [email, pseudo, hashPass],
                     (err, result) => {
                         if(result){
-                            res.send({loggedIn: true, data: result.rows});
+                            res.send({loggedIn: true, data: result.rows[0]});
                         }else console.log(err);
                     })
                 }else{

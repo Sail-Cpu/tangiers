@@ -33,10 +33,10 @@ const SignUp = () => {
     }
 
     const formSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         try{
             axios(config).then((result) => {
-                console.log(result.data);
+                console.log(result.data); 
                 if(!result.data.loggedIn){
                     setErrorMessage(result.data.error);
                 }else{

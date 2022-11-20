@@ -4,17 +4,16 @@ import { Outlet, Navigate } from 'react-router';
 import { UserContext } from './context/UserContext';
 /* pages */
 import SignIn from './pages/sign/SignIn';
+import SignUp from './pages/sign/SignUp';
 
 const useAuth = () => {
     const{ getToken } = useContext(UserContext);
-    console.log(getToken().loggedIn)
-    console.log("no")
     return getToken() && getToken().loggedIn;
 }
 
 const ProtecedRoute = () => {
     const isAuth = useAuth();
-    return isAuth ? <Outlet /> : <SignIn />;
+    return isAuth ? <Outlet /> : <SignUp />;
 }
 
 export default ProtecedRoute;

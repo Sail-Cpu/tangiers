@@ -1,4 +1,4 @@
-import React,{ useContext } from 'react';
+import React,{ useContext, useEffect, useState } from 'react';
 /* Context */
 import { UserContext } from '../context/UserContext';
 /* Img */
@@ -8,7 +8,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
 
-    const { user } = useContext(UserContext);
+    const { user, getToken } = useContext(UserContext);
+    
+    const disconect = () => {
+        sessionStorage.removeItem('token');
+        window.location = "/signin"
+    }
 
     return(
         <div className='nav-bar-container'>
@@ -16,9 +21,9 @@ const NavBar = () => {
                 <img src={Logo} />
             </div>
             <div className='nav-bar-right'>
-                <span>{user.money}€</span>
-                <div className='user-logo'>S</div>
-                <button>Déconnexion</button>
+                <span>{getToken().data.money}€</span>
+                <div className='user-logo'>{getToken().data.email[0].toUpperCase()}</div>
+                <button onClick={() => disconect()}>Déconnexion</button>
             </div>
             <div className='toogle-sub-nav'>
                 <MenuIcon />
